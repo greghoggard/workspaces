@@ -11,3 +11,5 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - chmod 644 ~/.ssh/config
+      - ssh -oStrictHostKeyChecking=no "corp\greg"@35.153.149.177
