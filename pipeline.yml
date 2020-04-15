@@ -252,7 +252,7 @@ Resources:
               -
                 Effect: Allow
                 Action:
-                  - '*:*'
+                  - '*'
                   # - 'cloudformation:ValidateTemplate'
                 Resource: '*'
 
