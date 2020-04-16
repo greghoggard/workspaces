@@ -2,19 +2,20 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.7
+      ruby: latest
     commands:
-      - wget http://sourceforge.net/projects/sshpass/files/latest/download -O sshpass.tar.gz
-      - tar -xvf sshpass.tar.gz
-      - cd sshpass-1.06
-      - ./configure
-      - make install
+      # - wget http://sourceforge.net/projects/sshpass/files/latest/download -O sshpass.tar.gz
+      # - tar -xvf sshpass.tar.gz
+      # - cd sshpass-1.06
+      # - ./configure
+      # - make install
+      - bundle install
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
-      - WSPASS=`aws ssm get-parameter --name "/wspass" --with-decryption --query 'Parameter.Value' --output text`
-      - chmod 644 ~/.ssh/config
-      - sshpass -p $WSPASS ssh -tt -oStrictHostKeyChecking=no "corp\greg"@35.153.149.177
+      # - WSPASS=`aws ssm get-parameter --name "/wspass" --with-decryption --query 'Parameter.Value' --output text`
+      # - chmod 644 ~/.ssh/config
+      # - sshpass -p $WSPASS ssh -tt -oStrictHostKeyChecking=no "corp\greg"@35.153.149.177
