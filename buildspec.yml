@@ -4,12 +4,12 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
-      - pip install --user aws-sam-cli
+      - yum install sshpass
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
-      - chmod 644 ~/.ssh/config
-      - ssh -oStrictHostKeyChecking=no "corp\greg"@35.153.149.177
+      # - chmod 644 ~/.ssh/config
+      # - ssh -oStrictHostKeyChecking=no "corp\greg"@35.153.149.177
