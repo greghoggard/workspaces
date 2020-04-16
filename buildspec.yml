@@ -4,12 +4,13 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
-      - yum install sshpass
+      - sudo apt-get install sshpass
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
-      # - chmod 644 ~/.ssh/config
-      # - ssh -oStrictHostKeyChecking=no "corp\greg"@35.153.149.177
+      - WSPASS=`aws ssm get-parameter --name "/wspass" --with-decryption --query 'Parameter.Value' --output text`
+      - chmod 644 ~/.ssh/config
+      - sshpass -p $WSPASS ssh -tt -oStrictHostKeyChecking=no "corp\greg"@35.153.149.177
