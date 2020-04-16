@@ -12,7 +12,7 @@ group :testing do
   gem 'inspec'
   gem 'kitchen-ansiblepush'
   gem 'kitchen-ec2'
-  gem 'kitchen-inspec', github: 'inspec/kitchen-inspec', ref: '09976b4'
+  # gem 'kitchen-inspec', github: 'inspec/kitchen-inspec', ref: '09976b4'
   gem 'test-kitchen'
 
   gem 'winrm'
