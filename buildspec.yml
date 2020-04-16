@@ -4,7 +4,7 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
-      - sudo apt-get install sshpass
+      - apt-get install sshpass
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
