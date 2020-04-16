@@ -4,7 +4,11 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
-      - apt-get install sshpass
+      - wget http://sourceforge.net/projects/sshpass/files/latest/download -O sshpass.tar.gz
+      - tar -xvf sshpass.tar.gz
+      - cd sshpass-1.06
+      - ./configure
+      - make install
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
